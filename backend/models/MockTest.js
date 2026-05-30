@@ -70,7 +70,10 @@ mockTestSchema.pre('validate', function validateQuestions(next) {
   next();
 });
 
-mockTestSchema.index({ assignedDepartments: 1, assignedBatches: 1, isPublished: 1 });
+// mockTestSchema.index({ assignedDepartments: 1, assignedBatches: 1, isPublished: 1 });
+mockTestSchema.index({ assignedDepartments: 1 });
+mockTestSchema.index({ assignedBatches: 1 });
+mockTestSchema.index({ isPublished: 1 });
 mockTestSchema.index({ title: 'text', description: 'text', 'questions.question': 'text', 'questions.tags': 'text' });
 
 const MockTest = mongoose.model('MockTest', mockTestSchema);
